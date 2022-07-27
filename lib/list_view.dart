@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class ListViewExample extends StatelessWidget {
   const ListViewExample({Key? key}) : super(key: key);
@@ -14,7 +13,7 @@ class ListViewExample extends StatelessWidget {
               alignment: Alignment.center,
               child: Text('list view item $index'),
               decoration: BoxDecoration(
-                color: index.isEven ? Colors.blue : Colors.green,
+                color: index.isEven ? Colors.black12 : Colors.black26,
               ),
             ),
           ),

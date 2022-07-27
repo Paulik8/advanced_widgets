@@ -2,7 +2,6 @@ import 'package:advanced_widgets/elements_tree.dart';
 import 'package:advanced_widgets/list_view.dart';
 import 'package:advanced_widgets/render_proxy_box.dart';
 import 'package:advanced_widgets/slivers.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import 'custom_multi_child_layout.dart';
@@ -38,10 +37,11 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   String _title = 'Hello, world!';
+  var _counter = 0;
 
   @override
   Widget build(BuildContext context) {
-    final example = Example.manyLevels;
+    final example = Example.stateLifecycle;
 
     return MaterialApp(
       title: 'Flutter Demo',
@@ -54,8 +54,6 @@ class _MyAppState extends State<MyApp> {
 
   Widget _getExample(Example example) {
     switch (example) {
-      case Example.elementsTree:
-        return ElementsTreeExample();
       case Example.stateLifecycle:
         return StatefulLifecycle(text: 'Hello, students!');
       case Example.manyLevels:
@@ -64,7 +62,8 @@ class _MyAppState extends State<MyApp> {
         return GestureDetector(
           onTap: () {
             setState(() {
-              _title = 'Title is changed';
+              _counter++;
+              _title = 'Title is changed $_counter times';
             });
           },
           child: i.TitleViewModel(
@@ -72,6 +71,8 @@ class _MyAppState extends State<MyApp> {
             child: const i.FirstLevelWidget(),
           ),
         );
+      case Example.elementsTree:
+        return ElementsTreeExample();
       case Example.listView:
         return const ListViewExample();
       case Example.listViewBuilder:

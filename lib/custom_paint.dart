@@ -101,7 +101,6 @@ class _Painter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    print('paint');
     for (final viewModel in viewModelList) {
       final aPoint = viewModel.startPoint;
       final shapeMode = viewModel.shapeMode;

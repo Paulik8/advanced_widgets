@@ -40,7 +40,7 @@ class CustomMultiChildLayoutExampleState
               ),
               middle: Container(
                 padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                color: Colors.amber,
+                color: Colors.lime,
                 alignment: Alignment.center,
                 child: const Text('middle', textAlign: TextAlign.center),
               ),

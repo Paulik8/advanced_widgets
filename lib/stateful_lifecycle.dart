@@ -54,7 +54,10 @@ class _StatefulLifecycleState extends State<StatefulLifecycle> {
           alignment: Alignment.center,
           child: Text(
             widget.text,
-            style: TextStyle(color: _isLightTheme ? Colors.black : Colors.white, fontSize: 40),
+            style: TextStyle(
+              color: _isLightTheme ? Colors.black : Colors.white,
+              fontSize: 40,
+            ),
           ),
         ),
       ),

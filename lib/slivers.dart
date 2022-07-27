@@ -39,7 +39,7 @@ class _SliversExampleState extends State<SliversExample> {
             padding: const EdgeInsets.symmetric(vertical: 4),
             sliver: SliverToBoxAdapter(
               child: MaterialButton(
-                color: Colors.black26,
+                color: Colors.white24,
                 onPressed: _requestMock,
                 child: Text('Request!'),
               ),
@@ -51,7 +51,13 @@ class _SliversExampleState extends State<SliversExample> {
               (context, index) {
                 return Container(
                   height: 50,
-                  child: Text('common item $index'),
+                  child: Text(
+                    'common item $index',
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(
+                      fontSize: 24,
+                    ),
+                  ),
                   decoration: BoxDecoration(color: Colors.green[100 * index]),
                 );
               },
@@ -77,7 +83,12 @@ class _SliversExampleState extends State<SliversExample> {
                 14,
                 (index) => Container(
                   alignment: Alignment.center,
-                  child: Text('grid item $index'),
+                  child: Text(
+                    'grid item $index',
+                    style: const TextStyle(
+                      fontSize: 24,
+                    ),
+                  ),
                   decoration: BoxDecoration(
                     color: index.isEven ? Colors.blue : Colors.green,
                     // shape: BoxShape.circle,
@@ -97,7 +108,7 @@ class _SliversExampleState extends State<SliversExample> {
             // fillOverscroll: true,
             // hasScrollBody: false,
             child: const ColoredBox(
-              color: Colors.orange,
+              color: Colors.tealAccent,
               child: Center(
                 child: CircularProgressIndicator(),
               ),

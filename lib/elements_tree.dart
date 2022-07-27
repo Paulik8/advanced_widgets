@@ -32,7 +32,10 @@ class _ElementsTreeExampleState extends State<ElementsTreeExample> {
             children: [
               GestureDetector(
                 onTap: _changeIcon,
-                child: Icon(_iconData),
+                child: Icon(
+                  _iconData,
+                  size: 48,
+                ),
               ),
               _iconData == Icons.flutter_dash
                   ? SizedBox(height: 20)
@@ -41,7 +44,7 @@ class _ElementsTreeExampleState extends State<ElementsTreeExample> {
                 _text,
                 style: TextStyle(
                   color: Colors.blue,
-                  fontSize: 18,
+                  fontSize: 24,
                 ),
               ),
             ],

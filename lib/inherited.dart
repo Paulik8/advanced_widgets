@@ -12,8 +12,6 @@ class TitleViewModel extends InheritedWidget {
   @override
   bool updateShouldNotify(TitleViewModel oldWidget) => oldWidget.title != title;
 
-  // bool updateShouldNotify(TitleViewModel oldWidget) => true;
-
   static TitleViewModel? of(BuildContext context) =>
       context.dependOnInheritedWidgetOfExactType<TitleViewModel>();
 }
@@ -28,7 +26,7 @@ class FirstLevelWidget extends StatelessWidget {
     print('FirstLevelWidget build');
     return Scaffold(
       appBar: AppBar(
-        title: Text('Inherited'),
+        title: const Text('Inherited'),
       ),
       body: const SecondLevelWidget(),
     );
@@ -54,7 +52,7 @@ class ThirdLevelWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     print('ThirdLevelWidget build');
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         shape: BoxShape.circle,
         color: Colors.orange,
       ),
@@ -74,7 +72,7 @@ class FourthLevelWidget extends StatefulWidget {
 }
 
 class _FourthLevelWidgetState extends State<FourthLevelWidget> {
-  late String _title;
+  var _title = 'SomeText';
 
   @override
   void initState() {
@@ -85,19 +83,18 @@ class _FourthLevelWidgetState extends State<FourthLevelWidget> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    // _title = '${TitleViewModel.of(context)?.title ?? 'broken data'}';
+    _title = '${TitleViewModel.of(context)?.title ?? 'broken data'}';
     print('FourthLevelWidget didChangeDependencies');
   }
 
   @override
   Widget build(BuildContext context) {
     print('FourthLevelWidget build');
-    // _title = 'SomeText';
-    _title = '${TitleViewModel.of(context)?.title ?? 'broken data'}';
+    // _title = '${TitleViewModel.of(context)?.title ?? 'broken data'}';
     return Text(
       _title,
-      textDirection: TextDirection.ltr,
-      style: TextStyle(
+      textAlign: TextAlign.center,
+      style: const TextStyle(
         color: Colors.black,
         fontSize: 40,
       ),
