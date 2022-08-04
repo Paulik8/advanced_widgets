@@ -63,7 +63,7 @@ class _MyAppState extends State<MyApp> {
           onTap: () {
             setState(() {
               _counter++;
-              _title = 'Title is changed $_counter times';
+              _title = 'Title has changed $_counter times';
             });
           },
           child: i.TitleViewModel(
